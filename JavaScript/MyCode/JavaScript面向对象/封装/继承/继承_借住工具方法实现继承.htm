@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>继承_借住工具方法实现继承</title>
+    <script src="../../../jquery.js" type="text/javascript"></script>
+    <script src="ExtendCommon.js" type="text/javascript"></script>
+    <script src="Animal.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function Cat(name,color) {
+            this.name = name;
+            this.color = color;
+        }
+
+
+
+        $(document).ready(function () {
+
+            extend(Cat, Animal, {
+                eat: function () {
+                   // Cat.superclass.eat.call(this);
+                    console.log('Also i like some ofther food, such as beef and more.');
+                }
+            });
+
+            var cat1 = new Cat("Rock", "Red");
+            //cat1.sleep();
+            cat1.eat();
+
+            console.log(cat1 instanceof Cat);
+            console.log(cat1 instanceof Animal);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

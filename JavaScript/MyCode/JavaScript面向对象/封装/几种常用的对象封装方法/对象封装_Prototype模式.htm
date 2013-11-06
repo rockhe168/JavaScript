@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../../jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var Cat = function(name, color) {
+            this.name = name;
+            this.color = color;
+        };
+
+        //我们可以把那些不变的属性和方法，直接定义在 `prototype` 对象上， 节省内存开销。
+        Cat.prototype.type = "动物";
+        Cat.prototype.eat = function () {
+            console.log("I'm like eat fish....");
+        };
+
+        //扩展jQuery的内部方法
+        jQuery.prototype.eat = function() {
+            console.log('jquery eat fish');
+        };
+
+        $(document).ready(function () {
+
+            var cat1 = new Cat('Rock', 'red');
+            var cat2 = new Cat('Alice', 'green');
+
+            console.log(cat1.type);
+
+            console.log(cat1.eat == cat2.eat);
+
+            console.log(cat1.constructor == Cat);
+
+            cat1.eat();
+
+            $.eat();
+
+        });
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

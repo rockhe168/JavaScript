@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="../../jquery.js"></script>
+    <script type="text/javascript">
+
+        function hello() {
+
+            var array = new Array();
+            array[0] = { Id: 1, Name: "Rock", Time: "2012-07-08" };
+            array[1] = { Id: 2, Name: "Alice", Time: "2012-07-08" };
+
+            //转换成Json字符串
+            var count = array.length;
+            var jsonStr = "[";
+            for (var i = 0; i < count; i++) {
+                if (i == 0) {
+                    jsonStr += "{";
+                } else {
+                    jsonStr += ",{";
+                }
+
+                jsonStr += "Id:" + "\"" + array[i].Id + "\",";
+                jsonStr += "Name:" + "\"" + array[i].Name + "\",";
+                jsonStr += "Time:" + "\"" + array[i].Time + "\"";
+                jsonStr += "}";
+            }
+            jsonStr += "]";
+
+            //alert(jsonStr);
+            //var postDate = "[{Id:\"1\",Name:\"Rock\",Time:\"2012-07-08\"},{Id:\"2\",Name:\"Alice\",Time:\"2012-07-09\"}]";
+            
+            //ajax请求
+            $.post("./UserInfoHandler.ashx", { "userinfo": jsonStr }, function (data, status) {
+                if (status == "success") {
+                    alert(data);
+                }
+            });
+        }
+        
+        //把array数组转换成json字符串
+        function ConvertJsonString(array) {
+            var count = array.length;
+            var jsonStr = "[";
+            for (var i = 0; i < count; i++) {
+                alert(array[i].Id);
+                jsonStr += "{";
+                jsonStr += "Id:" + "\"" + array[i].Id + "\"";
+                jsonStr += "Name:" + "\"" + array[i].Name + "\"";
+                jsonStr += "Time:" + "\"" + array[i].Time + "\"";
+                jsonStr += "}";
+            }
+            jsonStr += "]";
+
+            return jsonStr;
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="json" id="json" onclick="hello()"/>
+</body>
+</html>

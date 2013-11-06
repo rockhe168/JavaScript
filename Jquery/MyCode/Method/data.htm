@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>data test</title>
+    <script type="text/javascript">
+        console.log("test log is jquery method...");
+        console.log("ok... console.log not is jquery method...");
+    </script>
+    
+    <script src="../jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            console.log($('body').data());
+
+            console.log($('body').data('bar'));
+
+            //console.log($('body').data('bar', 'hello,this is bar value...'));
+            $('body').data('bar', 'hello,this is bar value....');
+
+            console.log($('body').data('bar'));
+
+            console.log($('body').data());
+
+            console.log($('#div1').data());
+
+            $("#div1").data("div1Key", "my is div value");
+
+            console.log($("#div1").data("div1Key"));
+
+            console.log($('body').data());
+            console.log($('#div1').data());
+
+
+            var div1Object = $("#div1").data();
+            console.log("div info--->" + "key:" + div1Object + ",value:" + div1Object.div1Key);
+
+        });
+
+    </script>
+</head>
+<body>
+    
+    <div id="div1">
+        
+    </div>
+
+</body>
+</html>

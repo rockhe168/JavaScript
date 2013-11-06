@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>天气预报Demo</title>
+    <script type="text/javascript" src="../../jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //var provinceList;
+            //请求城市列表,GetJson中文目录有问题
+            $.getJSON("./cityJson.js", function (data) {
+                var provinceList = data.城市代码;
+                var provinceItems = [];
+                $.each(provinceList, function (key, val) {
+                    provinceItems.push('<li id="' + key + '">' + val.省 + '</li>');
+                });
+                $('<ul/>', {
+                    'class': 'my-new-list',
+                    html: provinceItems.join('')
+                }).appendTo('#provinceList');
+
+                //绑定所有li的地址
+                $("#provinceList li").click(function () {
+                    //alert($(this).text() + $(this).attr("id"));
+                    var cityList = provinceList[$(this).attr("id")].市;
+                    ProvinceClick(cityList);
+                });
+            }).success(function () {
+                //alert("success");
+            }).error(function (data) {
+                alert("fail" + data);
+            }).complete(function () {
+                //alert("complete");
+            });
+        });
+
+        //执行省市Click事件
+        function ProvinceClick(cityList) {
+            var cityItems = [];
+            $.each(cityList, function (key, val) {
+                cityItems.push('<li id="' + val.编码 + '">' + val.市名 + '</li>');
+            });
+
+            $("#cityList").empty();
+
+            $('<ul/>', {
+                'class': 'my-new-list',
+                html: cityItems.join('')
+            }).appendTo('#cityList');
+
+            //城市点击事件
+            $("#cityList li").click(function () {
+                var cityCode = $(this).attr("id");
+                CityClick(cityCode);
+            });
+        }
+
+        //执行城市Click事件
+        function CityClick(cityCode) {
+            //alert(cityCode);
+            $.get("./GetWeatherHandler.ashx?action=GetWeatherByCityCode&cityCode=" + cityCode, function (data) {
+                //alert(data);
+                var json = $.parseJSON(data);
+
+                var date = new Date();
+                var html = json.weatherinfo.city + "-->" + json.weatherinfo.weather + ":" + json.weatherinfo.temp2 + "~" + json.weatherinfo.temp1 + "-->" + date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay();
+
+
+                //图片urlhttp://www.weather.com.cn/m2/i/icon_weather/29x20/d1.gif
+
+                alert(html);
+
+                alert("白天天气图片-->http://www.weather.com.cn/m2/i/icon_weather/29x20/" + json.weatherinfo.img1);
+            });
+        }
+    </script>
+</head>
+    <body>
+        <div id="provinceList">
+            
+        </div>
+
+        <div id="cityList">
+        </div>
+    
+    
+    </body>
+</html>

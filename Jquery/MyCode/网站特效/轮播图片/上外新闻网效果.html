@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>上外新闻新闻轮播</title>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).ready(function(){
+			
+		})
+	});
+</script>
+</head>
+
+<body>
+  <div id="colee_left" class="linkright_scrollpic">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr><td id="colee_left1" valign="top" align="center">
+<table cellpadding="2" cellspacing="0" border="0">
+<tr align="center">
+<td><p><img src="/Skins/Skin/images/link_scrollpic.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicb.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicc.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicd.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpice.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicf.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicg.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpich.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpici.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicj.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpick.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicl.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicm.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicn.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpico.jpg" /></p></td>
+<td><p><img src="/Skins/Skin/images/link_scrollpicp.jpg" /></p></td>
+</tr>
+</table>
+</td>
+<td id="colee_left2" valign="top"></td>
+</tr>
+</table>
+</div>
+<script>
+//使用div时，请保证colee_left2与colee_left1是在同一行上.
+var speed=30//速度数值越大速度越慢
+var colee_left2=document.getElementById("colee_left2");
+var colee_left1=document.getElementById("colee_left1");
+var colee_left=document.getElementById("colee_left");
+colee_left2.innerHTML=colee_left1.innerHTML
+function Marquee3(){
+if(colee_left2.offsetWidth-colee_left.scrollLeft<=0)//offsetWidth 是对象的可见宽度
+colee_left.scrollLeft-=colee_left1.offsetWidth//scrollWidth 是对象的实际内容的宽，不包边线宽度
+else{
+colee_left.scrollLeft++
+}
+}
+var MyMar3=setInterval(Marquee3,speed)
+colee_left.onmouseover=function() {clearInterval(MyMar3)}
+colee_left.onmouseout=function() {MyMar3=setInterval(Marquee3,speed)}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>继承_原型链继承</title>
+    <script src="../../../jquery.js" type="text/javascript"></script>
+    <script src="Animal.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        function Cat(name,color) {
+            this.name = name;
+            this.color = color;
+        }
+
+        //让猫继承动物,通过重写猫的原型prototype
+        Cat.prototype = new Animal();//原型模式之浅复制
+
+        //在为子类写方法
+        Cat.prototype.eat = function () {
+            console.log("I'm like eat fish...");
+        };
+
+
+        $(document).ready(function () {
+
+            var cat1 = new Cat("Rock", "Red");
+            cat1.eat();
+            cat1.sleep();
+
+            console.log(cat1 instanceof Cat);
+            console.log(cat1 instanceof Animal);
+
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
