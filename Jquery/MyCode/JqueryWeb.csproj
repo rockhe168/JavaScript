@@ -78,6 +78,7 @@
     <Content Include="SiteSpecific\Serialization\UserInfoHandler.ashx" />
     <None Include="网站特效\天气预报\cityJson2.json" />
     <Content Include="网站特效\天气预报\index.htm" />
+    <Content Include="网站特效\文本获取光标下拉\index.html" />
     <Content Include="网站特效\轮播图片\上外新闻网效果%28GOODLUCK--Administrator--2012-12-08-22,30,23%29.html" />
     <Content Include="网站特效\轮播图片\上外新闻网效果.html" />
     <Content Include="网站特效\进度条\indexLoad.html" />

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CommonMethod\call.htm" />
+    <Content Include="index.htm" />
     <Content Include="JavaScript面向对象\封装\几种常用的对象封装方法\对象封装_Prototype模式.htm" />
     <Content Include="JavaScript面向对象\封装\几种常用的对象封装方法\对象封装_原始模式.htm" />
     <Content Include="JavaScript面向对象\封装\几种常用的对象封装方法\对象封装_构造函数模式.htm" />
