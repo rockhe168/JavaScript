@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Javascript模块化编程（一）：模块的写法</title>
+    <!--<script type="text/javascript" src="./lib/jquery.js"></script>-->
+    <script type="text/javascript">
+        //对象写法
+        //var module1 = new Object({
+        //    _count: 0,
+        //    m1: function () {
+        //        //...
+        //    },
+        //    m2: function () {
+        //        //...
+        //    }
+        //});
+        //console.log(module1._count);
+        //module1._count = 5;
+        //console.log(module1._count);
+
+        //立即执行函数写法
+        var module1 = (function () {
+            var _count = 0;
+            var m1 = function () {
+                //...
+                console.info("invoke m1");
+            };
+            var m2 = function () {
+                //...
+                console.info("invoke m2");
+            };
+            return {
+                m1: m1,
+                m2: m2
+            };
+        })();
+        console.info(module1._count);
+        console.info(module1.m1);
+        module1.m1();
+
+        //放大模式
+        var module1 = (function (mod) {
+            mod.m3 = function () {
+                console.info("invoke m3..");
+            };
+
+            return mod;
+        })(module1);
+        module1.m3();
+
+        //
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

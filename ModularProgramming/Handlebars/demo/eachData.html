@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>eachData Demo</title>
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/handlebars-v1.3.0.js"></script>
+    <script id="userlist-template" type="text/x-handlebars-template">
+        {{#each user}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{age}}</td>
+            <td>{{sex}}</td>
+        </tr>
+        {{/each}}
+    </script>
+</head>
+<body>
+    <h1>each json绑定数据列表</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+            </tr>
+        </thead>
+        <tbody id="userlist">
+
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            var source = $("#userlist-template").html();
+            var template = Handlebars.compile(source);
+
+            var data = {
+                user: [
+                    {
+                        name: "rock",
+                        age: 28,
+                        sex: "男"
+                    }, {
+                        name: "alice",
+                        age: 28,
+                        sex: "女"
+                    }
+                ]
+            };
+
+            var htmlStr = template(data);
+            $("#userlist").html(htmlStr);
+
+        });
+    </script>
+</body>
+</html>

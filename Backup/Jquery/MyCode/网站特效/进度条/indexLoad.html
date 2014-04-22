@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>页面加载进度条</title>
+    <style type="text/css">
+    body{text-align:center}
+	.load{width:50%;margin-left:auto;margin-right:auto;}
+    </style>
+    <script src="../../jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var etControl = {};
+        etControl.process = function (config) {		
+			//获取屏幕高度
+            var pmHeight = document.documentElement.clientHeight;
+			
+			//获取屏幕宽度
+			var pmWidth=document.documentElement.clientWidth;
+						
+			//进度条的高度
+			var progressbarHeight=12;
+			//进度条的宽度
+			var progressbarWidth=150;
+			
+			//算出进度条距离顶部的距离
+			var pbTopHeight=(pmHeight - progressbarHeight)/2;
+			
+			//算出进度条距离屏幕左边的高度
+			var pbLeftWidth=(pmWidth - progressbarWidth)/2;
+            
+			/*需要放在html中的body标签后面使用本控件*/
+            var count = 0;
+            var id = "loading";
+            var el = 
+			"#" + id;
+
+            $("body").append('<div id="' + id + '"></div>');
+
+            var divTxt = "#" + id + " div";
+            $(el).html("<div></div>");
+            $(el).attr("style", "width: "+progressbarWidth+"px;height: "+progressbarHeight+"px;background: #A0DB0E;padding: 5px;position: fixed;left: 0;top: 0;font-size:12px;margin-top:"+pbTopHeight+"px;margin-left:"+pbLeftWidth+"px;");
+            $(divTxt).attr("style", "width: 1px;height: 12px;background: #F1FF4D;");
+
+            /*更新进度条*/
+            this.updateProcess = function (percent) {
+                setTimeout(function () { $(divTxt).animate({ width: percent * 1.5 + "px" }).text(percent + "%") }, ++count * 500);
+                if (percent == 100) {           /*100%就从页面移除loading标签*/
+				    
+                    setTimeout(function () {
+                        $(el).hide(500);
+						alert("页面加载完毕.....");
+                        setTimeout(function () { $(el).remove() }, 500);
+                    }, count * 500 + 800);
+					
+                }
+            };
+        }
+
+    </script>
+</head>
+<body>
+  
+</body>
+
+<script type="text/javascript">
+    /*需要放在body标签后面，然后在适当的位置调用updateProcess方法*/
+    var p = new etControl.process();
+	//p.updateProcess(1);
+	p.updateProcess(8);
+	p.updateProcess(15);
+    p.updateProcess(34);
+    p.updateProcess(57);
+    p.updateProcess(62);
+	p.updateProcess(78);
+    p.updateProcess(90);
+    p.updateProcess(100);
+</script>
+</html>

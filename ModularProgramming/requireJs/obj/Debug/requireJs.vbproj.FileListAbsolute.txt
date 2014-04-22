@@ -1,0 +1,9 @@
+E:\GitHub\JavaScript\ModularProgramming\requireJs\bin\requireJs.dll.config
+E:\GitHub\JavaScript\ModularProgramming\requireJs\bin\requireJs.dll
+E:\GitHub\JavaScript\ModularProgramming\requireJs\bin\requireJs.pdb
+E:\GitHub\JavaScript\ModularProgramming\requireJs\bin\requireJs.xml
+E:\GitHub\JavaScript\ModularProgramming\requireJs\obj\Debug\requireJs.Resources.resources
+E:\GitHub\JavaScript\ModularProgramming\requireJs\obj\Debug\requireJs.vbproj.GenerateResource.Cache
+E:\GitHub\JavaScript\ModularProgramming\requireJs\obj\Debug\requireJs.dll
+E:\GitHub\JavaScript\ModularProgramming\requireJs\obj\Debug\requireJs.xml
+E:\GitHub\JavaScript\ModularProgramming\requireJs\obj\Debug\requireJs.pdb

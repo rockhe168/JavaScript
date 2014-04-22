@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../../jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function Cat(name,color) {
+            this.name = name;
+            this.color = color;
+            this.eat = function() { console.log(this.name+" eat fish..."); };
+        }
+
+        $(document).ready(function () {
+            var cat1 = new Cat('Rock', 'red');
+            cat1.eat();
+            console.log(cat1 instanceof Cat);
+
+            var cat2 = Cat('Alice', 'green');
+            console.log(cat2 instanceof Cat);
+        });
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

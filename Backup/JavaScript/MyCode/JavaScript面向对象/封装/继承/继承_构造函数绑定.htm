@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>继承_构造函数绑定</title>
+    <script src="../../../jquery.js" type="text/javascript"></script>
+    <script src="Animal.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        //猫
+        /*
+        var Cat = function(name, color) {
+            this.name = name;
+            this.color = color;
+        };
+        */
+        
+        //让猫继承动物类【通过构造函数绑定父类的构造函数】
+        var Cat = function(name, color) {
+
+            //先绑定父类构造函数、后为本类属性赋值，以免父类同名属性覆盖子类属性
+            Animal.apply(this);//原型深复制
+
+            //为本类属性赋值
+            this.name = name;
+            this.color = color;
+        };
+
+        $(document).ready(function () {
+            var cat1 = new Cat('Rock','Red');
+
+            cat1.sleep();
+        });
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\bin\Handlebars.dll.config
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\bin\Handlebars.dll
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\bin\Handlebars.pdb
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\bin\Handlebars.xml
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\obj\Debug\Handlebars.Resources.resources
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\obj\Debug\Handlebars.vbproj.GenerateResource.Cache
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\obj\Debug\Handlebars.dll
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\obj\Debug\Handlebars.xml
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\Handlebars\obj\Debug\Handlebars.pdb

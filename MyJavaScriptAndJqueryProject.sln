@@ -1,11 +1,21 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptWeb", "JavaScript\MyCode\JavaScriptWeb.csproj", "{2EFD27D3-84C9-419B-8A01-CD6832F4012E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryWeb", "Jquery\MyCode\JqueryWeb.csproj", "{8E89FD85-BC96-467D-A1F2-54B0D58699BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap", "Bootstrap\MyCode\Bootstrap.csproj", "{47138372-D868-4D6E-8F0F-AAE85C6752AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModularProgramming", "ModularProgramming", "{7C200F66-E404-4F3A-93B0-160EB80026B4}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SeaJs", "ModularProgramming\SeaJs\SeaJs.vbproj", "{F514618A-62FA-40CD-92D5-B7AFBB0180F2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Handlebars", "ModularProgramming\Handlebars\Handlebars.vbproj", "{865FE782-B89A-4633-A00C-CE9000B84AD4}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "requireJs", "ModularProgramming\requireJs\requireJs.vbproj", "{17232E0B-4AC4-4C8F-A5F5-65B4A750431C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,8 +35,25 @@ Global
 		{47138372-D868-4D6E-8F0F-AAE85C6752AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47138372-D868-4D6E-8F0F-AAE85C6752AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47138372-D868-4D6E-8F0F-AAE85C6752AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F514618A-62FA-40CD-92D5-B7AFBB0180F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F514618A-62FA-40CD-92D5-B7AFBB0180F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F514618A-62FA-40CD-92D5-B7AFBB0180F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F514618A-62FA-40CD-92D5-B7AFBB0180F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865FE782-B89A-4633-A00C-CE9000B84AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865FE782-B89A-4633-A00C-CE9000B84AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865FE782-B89A-4633-A00C-CE9000B84AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865FE782-B89A-4633-A00C-CE9000B84AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17232E0B-4AC4-4C8F-A5F5-65B4A750431C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17232E0B-4AC4-4C8F-A5F5-65B4A750431C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17232E0B-4AC4-4C8F-A5F5-65B4A750431C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17232E0B-4AC4-4C8F-A5F5-65B4A750431C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F514618A-62FA-40CD-92D5-B7AFBB0180F2} = {7C200F66-E404-4F3A-93B0-160EB80026B4}
+		{865FE782-B89A-4633-A00C-CE9000B84AD4} = {7C200F66-E404-4F3A-93B0-160EB80026B4}
+		{17232E0B-4AC4-4C8F-A5F5-65B4A750431C} = {7C200F66-E404-4F3A-93B0-160EB80026B4}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Getting Started</title>
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/handlebars-v1.3.0.js"></script>
+
+    <!--模板-->
+    <script id="entry-template" type="text/x-handlebars-template">      
+            <h1>{{title}}</h1>
+            <div class="body">
+                {{body}}
+            </div>
+    </script>
+</head>
+<body>
+    <div class="entry"></div>
+    <script type="text/javascript">
+            $(document).ready(function () {
+                //1,获取源
+                var source = $("#entry-template").html();
+
+                //2，获取模板
+                var template = Handlebars.compile(source);
+
+                //3，获取数据
+                var data = { title: "This is title", body: "内容可以花俏一些，问题应该不大。" };
+
+                //设置值
+                var htmlStr = template(data);
+
+                //alert(html);
+                $(".entry").html(htmlStr);
+            });
+    </script>
+</body>
+</html>

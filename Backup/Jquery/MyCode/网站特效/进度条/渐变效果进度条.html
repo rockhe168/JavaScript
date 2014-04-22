@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>渐变效果进度条</title>
+<script type="text/javascript" language="javascript">
+var i;
+function go()
+{
+bar_width = document.getElementById("bg").clientWidth;
+i = bar_width;
+setTimeout('start();',300);
+}
+function start()
+{
+if(i-->0)
+{
+   ps.style.width = i;
+   bn.innerHTML = Math.floor((bar_width-i)/bar_width*100)+"%";
+   setTimeout('start();',20);
+}
+}
+
+</script>
+<style type="text/css">
+#bg {
+filter:progid:DXImageTransform.Microsoft.Gradient (GradientType=1, StartColorStr=#FFFF00, EndColorStr=#FF0000);
+	width:300px;
+	height:20px;
+	border:1px solid black;
+	z-index:0;
+	position:absolute;
+}
+#ps {
+	float:right;
+	background-color:#FFFF00;
+	width:100%;
+}
+#bn {
+	position:absolute;
+	text-align:center;
+	width:100%;
+	height:100%;
+	cursor:default;
+}
+</style>
+</head>
+<body onload="go();">
+<div id="bg">
+  <div id="ps"></div>
+  <span id="bn">0%</span></div>
+</body>
+</html>

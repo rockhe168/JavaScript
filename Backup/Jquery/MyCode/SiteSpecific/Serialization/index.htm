@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Js Array 转换Json Ajax to C# Serialization</title>
+    
+    <script src="../../json.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../jquery.js"></script>
+ 
+    <script type="text/javascript">
+        // "名称/值"对的集合
+        var User = { "userID": "1", "Name": "Froog", "friends": ["Jack", "Zack", "Justin"] };
+        //alert(User.Name); alert(User.friends[0]);
+
+        // 值的有序列表
+        var Users = [{ "userID": "1", "Name": "Froog", "friends": ["Jack", "Zack", "Justin"] },
+            { "userID": "2", "Name": "Zack", "friends": ["Jack", "Zack", "Justin"] },
+            { "userID": "3", "Name": "Justin", "friends": ["Jack", "Zack", "Justin"]}];
+        //alert(Users[2].Name); alert(Users[2].friends.length);
+        //alert(escape());
+
+        // 转换JSON字符到Object
+        var JsonString = '{"userID":"2","Name":"Froog","friends":["Jack","Zack","Justin"]}';
+        var User2 = eval('(' + JsonString + ')');
+        //alert(User2.Name); alert(User2.friends[0]);
+
+        //引用 json.js 实现JSON字符与Object相互转换。
+        //var obj = JsonString.parseJSON();
+        
+
+        var obj = JsonString.parseJSON();
+        alert(obj.toJSONString());
+
+        
+
+        //AJAX 中使用JSON   
+        function getResult() {
+            $.ajax({
+                type: "POST",
+                url: "UserInfoHandler.ashx?Json=true",
+                data: "UserInfo=" + obj.toJSONString(),
+                success: function (msg) {
+                    var obj = msg.parseJSON();
+                    alert("Name: " + obj.Name + ",User:" + obj.User);
+                    alert("success");
+                }
+            });
+
+            //  requestHeaders: {Accept: 'application/json'} /**/,
+        }
+ 
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" value="AJAX" onclick="getResult()" />
+    </div>
+</body>
+</html>

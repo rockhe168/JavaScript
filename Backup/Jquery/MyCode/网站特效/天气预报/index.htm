@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>天气预报Demo</title>
+    <script type="text/javascript" src="../../jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //请求城市列表
+            $.getJSON("./cityJson2.json", function () {
+                alert("sss");
+            }).success(function () {
+                alert("success");
+            }).error(function (data) {
+                alert("fail"+data);
+            }).complete(function () {
+                alert("complete");
+            });
+
+            //alert();
+        });
+    </script>
+    
+</head>
+<body>
+    <div id="cityList">
+    </div>
+</body>
+</html>

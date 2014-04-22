@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>eachData Demo</title>
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/handlebars-v1.3.0.js"></script>
+    <script id="userlist-template" type="text/x-handlebars-template">
+        {{#each user}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{age}}</td>
+            <td>{{sex}}</td>
+        </tr>
+        {{/each}}
+    </script>
+    <script id="orderlist-template" type="text/x-handlebars-template">
+        {{#each order}}
+        <tr>
+            <td>{{orderId}}</td>
+            <td>{{productName}}</td>
+            <td>{{quantity}}</td>
+        </tr>
+        {{/each}}
+    </script>
+</head>
+<body>
+    <h1>each json绑定数据列表</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+            </tr>
+        </thead>
+        <tbody id="userlist">
+
+        </tbody>
+    </table>
+
+    <br /><hr /><br />
+
+    <table>
+        <thead>
+            <tr>
+                <td>订单编号</td>
+                <td>产品名称</td>
+                <td>数量</td>
+            </tr>
+        </thead>
+        <tbody id="orderlist"></tbody>
+    </table>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //用户
+            var userSource = $("#userlist-template").html();
+            var userTemplate = Handlebars.compile(userSource);
+
+            var data = {
+                user: [
+                    {
+                        name: "rock",
+                        age: 28,
+                        sex: "男"
+                    }, {
+                        name: "alice",
+                        age: 28,
+                        sex: "女"
+                    }
+                ],
+               order:[
+                    {
+                        orderId:1111,
+                        productName:"小小丫",
+                        quantity:3
+                    },{
+                        orderId:2222,
+                        productName:"肯德基",
+                        quantity:2
+                    }]
+            };
+
+            var userHtmlStr = userTemplate(data);
+            $("#userlist").html(userHtmlStr);
+
+            //订单
+            var orderSource = $("#orderlist-template").html();
+            var orderTemplate = Handlebars.compile(orderSource);
+            var orderHtmlStr = orderTemplate(data);
+            $("#orderlist").html(orderHtmlStr);
+
+        });
+    </script>
+</body>
+</html>

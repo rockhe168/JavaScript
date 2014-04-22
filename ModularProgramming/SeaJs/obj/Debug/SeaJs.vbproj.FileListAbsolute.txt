@@ -1,0 +1,9 @@
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\bin\SeaJs.dll.config
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\bin\SeaJs.dll
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\bin\SeaJs.pdb
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\bin\SeaJs.xml
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\obj\Debug\SeaJs.Resources.resources
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\obj\Debug\SeaJs.vbproj.GenerateResource.Cache
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\obj\Debug\SeaJs.dll
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\obj\Debug\SeaJs.xml
+E:\GitHub\PracticeCode\JavaScript\ModularProgramming\SeaJs\obj\Debug\SeaJs.pdb
