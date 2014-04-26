@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptWeb", "JavaScript\MyCode\JavaScriptWeb.csproj", "{2EFD27D3-84C9-419B-8A01-CD6832F4012E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryWeb", "Jquery\MyCode\JqueryWeb.csproj", "{8E89FD85-BC96-467D-A1F2-54B0D58699BB}"
@@ -16,6 +18,15 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "requireJs", "ModularProgramming\requireJs\requireJs.vbproj", "{17232E0B-4AC4-4C8F-A5F5-65B4A750431C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone", "ModularProgramming\Backbone\Backbone.csproj", "{B956D152-21DC-48BA-A5EF-0BB67D280CE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{3AABBC1C-9844-43E9-8772-194654D68EE3}"
+	ProjectSection(SolutionItems) = preProject
+		lib\backbone.js = lib\backbone.js
+		lib\jquery.js = lib\jquery.js
+		lib\json2.js = lib\json2.js
+		lib\underscore.js = lib\underscore.js
+		lib\zepto.js = lib\zepto.js
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,5 +71,6 @@ Global
 		{865FE782-B89A-4633-A00C-CE9000B84AD4} = {7C200F66-E404-4F3A-93B0-160EB80026B4}
 		{17232E0B-4AC4-4C8F-A5F5-65B4A750431C} = {7C200F66-E404-4F3A-93B0-160EB80026B4}
 		{B956D152-21DC-48BA-A5EF-0BB67D280CE2} = {7C200F66-E404-4F3A-93B0-160EB80026B4}
+		{3AABBC1C-9844-43E9-8772-194654D68EE3} = {7C200F66-E404-4F3A-93B0-160EB80026B4}
 	EndGlobalSection
 EndGlobal

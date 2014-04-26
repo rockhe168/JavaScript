@@ -8,3 +8,9 @@ E:\My\百度云\PracticeCode\JavaScript\MyCode\bin\JavaScriptWeb.pdb
 E:\My\百度云\PracticeCode\JavaScript\MyCode\obj\Debug\ResolveAssemblyReference.cache
 E:\My\百度云\PracticeCode\JavaScript\MyCode\obj\Debug\JavaScriptWeb.dll
 E:\My\百度云\PracticeCode\JavaScript\MyCode\obj\Debug\JavaScriptWeb.pdb
+E:\GitHub\JavaScript\JavaScript\MyCode\bin\JavaScriptWeb.dll.config
+E:\GitHub\JavaScript\JavaScript\MyCode\bin\JavaScriptWeb.dll
+E:\GitHub\JavaScript\JavaScript\MyCode\bin\JavaScriptWeb.pdb
+E:\GitHub\JavaScript\JavaScript\MyCode\obj\Debug\JavaScriptWeb.csprojResolveAssemblyReference.cache
+E:\GitHub\JavaScript\JavaScript\MyCode\obj\Debug\JavaScriptWeb.dll
+E:\GitHub\JavaScript\JavaScript\MyCode\obj\Debug\JavaScriptWeb.pdb
