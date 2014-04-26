@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Model实践</title>
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/underscore.js"></script>
+    <script src="./lib/backbone.js"></script>
+    <script>
+        (function ($) {
+
+        	//最简单的对象
+        	var Man = Backbone.Model.extend({
+        		url:'/modelService.ashx',
+        		initialize:function(){
+        			console.info("Hi,you create me!");
+        			//初始化时绑定属性监控
+	        		this.bind('change:name',function(){
+	        			var name = this.get('name');
+	        			console.log("你改变了name属性值为："+name);
+	        		});
+	        		this.bind("invalid",function(model,error){
+	        			console.error(error);
+	        		})
+        		},
+        		defaults:{
+        			name:"张三",
+        			age:''
+        		},
+        		validate:function(attributes){
+        			if(attributes.name == ''){
+        				return "name 不能为空！";
+        			}
+        		},
+        		aboutMe:function(){
+        		 	return "My Name is "+this.get('name')+", 今年"+this.get('age')+"岁";
+        		},
+        	});
+
+        	var man = new Man;
+        	console.info(man.get('name'));
+
+        	//设值
+        	man.set({name:'何湘红',age:'30'});
+        	//取值
+        	console.info(man.get('name'));
+
+        	//方法
+        	console.info(man.aboutMe());
+
+        	console.info(man["name"]);//不能以索引的形式访问
+
+        	//监听对象中的属性变化
+        	man.on("change:name",function(model,name){
+        		console.log("name属性值为:"+man.previous("name")+"-->改为："+name);
+        	});
+
+        	man.set({name:"alice"});
+
+        	//man.set({name:''});
+
+        	//man.set({name:''},{'validate':true});////手动触发验证, set时会触发
+
+        	//man.save();//save时触发验证。根据验证规则，弹出错误提示。
+
+        	man.save({
+                success:function(model,response){
+                    //model 为获取到的数据
+                    console.info("ajax 成功响应-->name:"+model.get('name'));
+                },
+                error:function(model, response, options) {
+                    /* Act on the event */
+                    console.info("ajax 请求失败！"+response);
+                }
+            });
+
+        	man.fetch({
+        		success:function(model,response){
+        			//model 为获取到的数据
+        			console.info("ajax 成功响应-->name:"+model.get('name'));
+        		},
+        		error:function(model, response, options) {
+        			/* Act on the event */
+        			console.info("ajax 请求失败！"+response);
+        		}
+        	});
+
+        })(jQuery);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

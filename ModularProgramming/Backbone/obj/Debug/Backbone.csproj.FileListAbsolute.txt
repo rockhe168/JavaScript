@@ -1,0 +1,6 @@
+E:\GitHub\JavaScript\ModularProgramming\Backbone\bin\Backbone.dll.config
+E:\GitHub\JavaScript\ModularProgramming\Backbone\bin\Backbone.dll
+E:\GitHub\JavaScript\ModularProgramming\Backbone\bin\Backbone.pdb
+E:\GitHub\JavaScript\ModularProgramming\Backbone\obj\Debug\Backbone.dll
+E:\GitHub\JavaScript\ModularProgramming\Backbone\obj\Debug\Backbone.pdb
+E:\GitHub\JavaScript\ModularProgramming\Backbone\obj\Debug\Backbone.csprojResolveAssemblyReference.cache
