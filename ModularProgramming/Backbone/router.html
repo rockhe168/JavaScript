@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Router实战</title>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../lib/underscore.js"></script>
+    <script src="../../lib/backbone.js"></script>
+    <script>
+    (function($){
+
+    	var AppRouter = Backbone.Router.extend({
+    		routes:{
+    			"posts/:id":"getPost",
+    			"download/*path":"downloadFile",
+    			":route/:action":"loadView",
+    			"manual":"manual",
+    			"*actions":"defaultRoute"
+    		},
+
+    		getPost:function(id){
+    			console.info("被路由到这来了，，，参数id值为："+id);
+    		},
+
+    		downloadFile:function(path){
+    			console.info("downloadFile-->"+path);
+    		},
+
+    		loadView:function(route,action){
+    			console.info("loadView-->route="+route+"，action="+action);
+    		},
+
+    		manual:function(){
+    			console.info("call manual");
+    			//trigger表示触发事件，如果为false，则只是url变化，并不会触发事件，replace表示url替换，而不是前进到这个url，意味着启用该参数，浏览器的history不会记录这个变动。
+    			app_router.navigate("/posts/"+404,{trigger:true,replace:true});
+    		},
+
+    		//默认路由
+    		defaultRoute:function(actions){
+    			//alert(actions);
+    			console.info("走到默认路由里面来了-->"+actions);
+    		}
+    	});
+
+    	var app_router = new AppRouter();
+
+    	Backbone.history.start();
+
+
+    })(jQuery);
+    </script>
+</head>
+<body>
+	<a href="#actions">testActions</a>
+	<br>
+	<a href="#/posts/120">Post 120</a>
+	<br>
+	<a href="#/download/user/images/hey.gif">download gif</a>
+	<br>
+	<a href="#/dashboard/graph">Load Route/Action View</a>
+	<br>
+	<a href="#/manual">manual</a>
+</body>
+</html>

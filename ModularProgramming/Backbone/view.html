@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>view实战</title>
+
+</head>
+<body>
+
+	<div id="search_container"></div>
+	<script type="text/template" id="searche_template">
+	 	<label><%= search_label %></label>
+	 	<input type="text" id="search_input" />
+	    <input type="button" id="search_button" value="Search">
+	</script>
+
+	<script src="../../lib/jquery.js"></script>
+    <script src="../../lib/underscore.js"></script>
+    <script src="../../lib/backbone.js"></script>
+    <script>
+    	(function($){
+
+    		var SearchView = Backbone.View.extend({
+    			initialize:function(){
+    				console.info("init a SearchView...");
+    			},
+    			render:function(context){
+    				//使用underscore这个库，来编译模板
+    				var template = _.template($("#searche_template").html(),context);
+
+    				//加载模板到对应的el属性中
+    				$(this.el).html(template);
+    			},
+    			//event来进行事件绑定。这里要注意的是在view中定义的dom元素是指你el标签所定义的那一部分dom节点，event进行事件绑定时会在该节点范围内查找。
+    			events:{
+    				'click input[type=button]':'doSearch' //定义类型为button的input标签的点击事件，触发函数doSearch
+    			},
+
+    			doSearch:function(event){
+    				console.info("search for "+$("#search_input").val());
+    			}
+    		});
+
+    		var searchView = new SearchView({el:$("#search_container")});
+    		searchView.render({search_label:"搜索渲染"});
+    		
+    	})(jQuery);
+    </script>
+</body>
+</html>

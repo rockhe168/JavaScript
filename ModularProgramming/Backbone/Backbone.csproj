@@ -68,6 +68,12 @@
     <Content Include="lib\underscore.js" />
     <Content Include="lib\zepto.js" />
     <Content Include="model.html" />
+    <Content Include="router.html" />
+    <Content Include="todos\destroy.png" />
+    <Content Include="todos\index.html" />
+    <Content Include="todos\todos.css" />
+    <Content Include="todos\todos.js" />
+    <Content Include="view.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -91,6 +97,7 @@
   <ItemGroup>
     <Content Include="collectionService.ashx" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
