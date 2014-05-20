@@ -13,7 +13,29 @@
 		</header>
 
 		<section id="main">
-			
+			<input id="toggle-all" type="checkbox">
+			<label for="toggle-all">全选</label>
+			<ul id="todo-list">
+				<!--
+				<li>
+					<div class="view">
+						<input class="toggle" type="checkbox"/>
+						<label>这里是模板原始模样！</label>
+						<a class="destroy"></a>
+					</div>
+					<input class="edit" type="text" value="这里是编辑文本域" />
+				</li>
+
+				<li class="editing">
+					<div class="view">
+						<input class="toggle" type="checkbox"/>
+						<label>这里是模板原始模样！</label>
+						<a class="destroy"></a>
+					</div>
+					<input class="edit" type="text" value="这里是编辑文本域,编辑模式！" />
+				</li>
+				-->
+			</ul>
 		</section>
 
 		<footer>
@@ -22,10 +44,30 @@
 		</footer>
 	</div>
 
+	<!--Template-->
+	<script type="text/template" id="item-template">
+		<div class="view">
+			<input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : ''%> />
+			<label><%=title%></label>
+			<a class="destroy"></a>
+		</div>
+		<input class="edit" type="text" value="<%= title %>" />
+	</script>
 
+	<script type="text/template" id="stats-template">
+		<% if(doned){ %>
+			<a id="clear-completed">Clear <%=doned%> completed <%=doned==1 ? 'item' : 'items'%></a>
+		<% } %>
+
+		<div class="todo-count"><b><%=remaining %></b> <%=remaining == 1 ? 'item' : 'items' %> left</div>
+	</script>
+
+	
+	<script src="../lib/json2.js"></script>
 	<script src="../lib/jquery.js"></script>
     <script src="../lib/underscore.js"></script>
     <script src="../lib/backbone.js"></script>
+    <script src="../lib/backbone.localStorage.js"></script>
     <script src="todos.js"></script>
 </body>
 </html>

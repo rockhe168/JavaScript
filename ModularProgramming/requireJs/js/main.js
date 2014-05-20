@@ -1,4 +1,4 @@
-﻿console.info("main 加载成功");
+console.info("main 加载成功");
 
 require.config({
 	paths:{
@@ -10,6 +10,4 @@ require.config({
 
 require(['math'],function(math){
 	console.info(math.add(3,2));
-})
-
-
+});
