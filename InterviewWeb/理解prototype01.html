@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+    var obj ={age:30};
+
+    function Person(){
+
+    };
+    var personInstance=new Person();
+
+    Person.prototype = obj;//personInstance指向的还是老的原型地址....,这里重写了Person 的原型地址。
+
+    console.info(personInstance.age);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
