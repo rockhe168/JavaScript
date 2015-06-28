@@ -155,6 +155,8 @@
 			//console.log("add todo-->"+todo);
 			var view =new TodoView({model:todo});
 			this.$("#todo-list").append(view.render().el);//从当前视图中找对应元素
+
+			//this.render();
 		},
 		refreshData:function(){
 			console.info("AppView refreshData...");
